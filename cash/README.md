@@ -14,6 +14,10 @@
 ### Usage
 Cash is a simple script designed to convert a certain amount in a certain currency
 
+` $ cash <amount> <currency>`
+
+` $ cash <command>`
+
 ### Commands
 `--save,  -s       Save currencies as default currencies`
 `--help,  -h       Display help message`

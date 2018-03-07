@@ -8,12 +8,16 @@ const currencies = require('../lib/currencies.json');
 const API = 'https://api.fixer.io/latest';
 
 const convert = configuration => {
+  //Store the user command in object
   const {amount, to, from, response, loading} = configuration;
 
+  //Get default exchange rate base currency, which all the exchange rates are relative to
   money.base = response.body.base;
+  //Get exchange rates relative to the base currency
   money.rates = response.body.rates;
 
   to.forEach(item => {
+    //check if the currency exists in the currencies.json file
     if (currencies[item]) {
       loading.succeed(
         `${chalk.green(
