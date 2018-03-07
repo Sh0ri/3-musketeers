@@ -18,8 +18,8 @@ const convert = configuration => {
       loading.succeed(
         `${chalk.green(
           money.convert(amount, {from, 'to': item}).toFixed(2)
-        )} ${`(${item})`} ${currencies[item]}`
-      );
+          )} ${`(${item})`} ${currencies[item]}`
+        );
     } else {
       loading.warn(`${chalk.yellow(` The ${item} currency not found `)}`);
     }
@@ -29,8 +29,8 @@ const convert = configuration => {
   console.log(
     chalk.underline.gray(
       ` Conversion of ${chalk.bold(from)} ${chalk.bold(amount)}`
-    )
-  );
+      )
+    );
   process.exit(1);
 };
 
@@ -38,8 +38,8 @@ const cash = async command => {
   const amount = command.amount;
   const from = command.from.toUpperCase();
   const to = command.to
-    .filter(item => item !== from)
-    .map(item => item.toUpperCase());
+  .filter(item => item !== from)
+  .map(item => item.toUpperCase());
 
   console.log();
   const loading = ora({
